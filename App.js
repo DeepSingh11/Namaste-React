@@ -1,7 +1,8 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root=document.getElementById("root");
+const child=React.createElement("h1",{ id:"heading" },"child😄");
 
-const child=document.createElement("h1");
-child.innerHTML="child";
+const root=ReactDOM.createRoot(document.getElementById("root"));
 
-root.appendChild(child);
+root.render(child);
