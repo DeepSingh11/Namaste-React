@@ -1,14 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const child=React.createElement("h1",{ id:"heading" },"child😄");
+const jsxheading=<h1 id="heading">JSX Heading!!</h1>
 
-//JSX -> HTML like or XML like syntax
-const jsxheading=<h1 id="heading">JSX Heading!!</h1>//this also creates ReactElement
-console.log(child);
-console.log(jsxheading);//Both will be same
-
+const Title=()=> {
+    return (<h1 className="heading">
+    Title🚀
+    </h1>)
+}
+const HeadingComponent=()=>{
+    return ( 
+    <div className="head">
+        {Title()}{/*react components are JS functions*/}
+        <Title/>
+        <Title></Title>
+        <h1>Heading Functional component!</h1>
+    </div>)
+}
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(jsxheading);
+root.render(<HeadingComponent/>);
