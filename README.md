@@ -3,7 +3,7 @@
 --document.createElement("tagname") => create HTML element or node
 --React.createElement("tagname",{attributes},"child") (is actually)=> JS Object (which in turn)=> HTML element
 --Note: JSX is not HTML inside JS.
----JSX => ReactElement(JS Object) => HTML element.
+---JSX => Babel transpiles it to React.createElement => ReactElement(JS Object) => HTML element.
 ---JSX is transpiled before it reaches the JS Engine which is done by parcel which in turn takes help of Babel.
 
 ## installing parcel(webpack)
