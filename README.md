@@ -24,7 +24,9 @@
 👉 browserslist -> used to list the browsers inside package.json on which our react-app can run<br/>
 👉 scripts can be created under "scripts"-key in package.json and can be used to create dev and prod ready code instead of repeating "npx parcel index.html" and "npx parcel build index.html" again and again, instead we can use "npm run start"
 or just "npm start" and "npm run build" to create prod ready code.<br/>
-
+👉 Config-Driven_UI: controlling UI through backend data i.e UI is driven by data. <br/>
+👉 if key is not specified inside map fn, then react will re-render all the list Objects(i.e whole list) but if key is specified only the newly added list Object(i.e list item) will be rendered while all the other list Objects will not be re-rendered.<br/>
+👉 not using key (not-acceptable) <<<<<< using index as key <<<<<< using unique id as key (best).<br/>
 # Parcel
 -Dev Build<br/>
 -Local Server<br/>

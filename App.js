@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { resList } from "./constants";
 const Header=()=>{
     return(
         <div className="header">
@@ -19,47 +19,44 @@ const Header=()=>{
     )
 }
 
-const RestaurantCard=()=>{
+const RestaurantCard=(props)=>{
+    const {resData}=props;
+    console.log(resData);
+    const {name,cuisines,avgRating,slaString,costForTwo}=resData?.info;
+    const url="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId;
     return (
         // style attr takes Object{}
         <div className="res-card" style={{backgroundColor:"#f0f0f0"}}>
-            <img src="#" className="res-logo"/>
+            <img src={url}
+            className="res-logo"/>
             <div className="res-data">
-                <h3>Restaurant Name</h3>
-                <h4>Cuisines</h4>
-                <h4>4.3 stars</h4>
-                <h4>38 minutes</h4>
+                <h3>{name}</h3>
+                <h4>{cuisines.join(",")}</h4>
+                {/* <div style={{display:"flex",justifyContent:"space-around"}}> */}
+                <h4>{avgRating}</h4>
+                <h4>{slaString}</h4> 
+                {/* </div> */}
+                <h4>{costForTwo}</h4>
             </div>
         </div>
     )
 }
-const Body=()=>{
+const BodyComponent=()=>{
     return (
-        <div className="body">
+        <div className="body-component" style={{backgroundColor:"black"}} >
             <div className="search">
                 Search
             </div>   
             <div className="res-container">
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
+            {/* key(resData) should be destructured in component and name should be same i.e resData*/}
+            {/* not using key (not-acceptable) <<<<<< using index as key <<<<<< using unique id as key (best). */}
+            {resList.map((res)=>{
+                return <RestaurantCard key={res?.info?.id} resData={res}/>
+            })}
+            {resList.map((res,i)=>{
+            {/* not using key (not-acceptable) <<<<<< using index as key <<<<<< using unique id as key (best). */}
+                return <RestaurantCard key={i} resData={res}/>
+            })}
             </div>
         </div>
     )
@@ -70,7 +67,7 @@ const AppLayout=()=>{
     return (
         <div className="app">
         <Header/>
-        <Body/>
+        <BodyComponent/>
         </div>
     )
 }
