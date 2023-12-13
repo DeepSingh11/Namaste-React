@@ -84,3 +84,14 @@
 .res-data :hover{
     color: rgb(21, 6, 238);
 }
+
+.filter-btn{
+    margin:10px;
+    padding: 5px;
+    background-color: orange;
+    color:white;
+    font-size: small;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
