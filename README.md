@@ -34,6 +34,11 @@ or just "npm start" and "npm run build" to create prod ready code.<br/>
 2. named export/import:<br/>
     export const Component/variable;<br/>
     import {Component} from "path";<br/>
+👉 Monolith v/s Microservices architecture=><br/>
+--Monolith:-all the code components(services e.g Backend,UI,Auth etc.) are written inside a same bulky project.<br/>
+--Microservices:- components(services e.g Backend,UI,Auth etc.) are written independently and share data with each other.<br/>
+👉 page loads=> render => api call(successful) => re-render.<br/>
+👉 fetch is not provided to us by javascript, it is provided by browsers.<br/>
 
 
 # Parcel
